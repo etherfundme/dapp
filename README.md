@@ -1,2 +1,3 @@
-# dapp
-EtherFundMe crowdfunding smart contracts
+# ETHERFUNDME
+Ethereum based crowdfunding service
+
