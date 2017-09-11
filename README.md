@@ -1,6 +1,5 @@
 # ETHERFUNDME
-Ethereum based crowdfunding service
 
 
-   ![GitHub Logo](/logo.png)
+  # ![GitHub Logo](/logo.png)
                              
