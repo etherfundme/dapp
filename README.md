@@ -7,6 +7,8 @@ Published documents are the code of contracts, which are used by EtherFundMe ser
 
 ### How It Works
 
+EtherFundMe is a service for running crowdfunding campaigns on the Ethereum blockchain. The EtherFundMe smart contract implements the core mechanics of crowdfunding—contributions with refunds if the campaign goal isn't met. The EtherFundMe web app makes it easy to start accepting contributions. With a strong focus on security and smart contract best practices, EtherFundMe makes it easy to launch a safe campaign that works in the Ethereum blockchain. 
+
 ### The content of published documents
 
 SmartContract                             | Description
