@@ -9,9 +9,9 @@ Published documents are the code of contracts, which are used by EtherFundMe ser
 
 ### The content of published documents
 
-SmartContract | Description
-------------  | -------------
-
+SmartContract                             | Description
+------------                              | -------------
+https://github.com/etherfundme/dapp/blob/master/contracts/EtherFundMeCrowdfunding.sol
 
 ### Bug Bounty
 
