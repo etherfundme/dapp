@@ -11,7 +11,7 @@ Published documents are the code of contracts, which are used by EtherFundMe ser
 
 SmartContract                             | Description
 ------------                              | -------------
-https://github.com/etherfundme/dapp/blob/master/contracts/EtherFundMeCrowdfunding.sol
+[EtherFundMeCrowdfunding](https://github.com/etherfundme/dapp/blob/master/contracts/EtherFundMeCrowdfunding.sol) | Basic crowdfunding contract 
 
 ### Bug Bounty
 
