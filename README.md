@@ -2,7 +2,7 @@
 
 ### Introduction                          
 
-Published documents are the code of contracts, which are used by Etherfundme service. 
+Published documents are the code of contracts, which are used by EtherFundMe service. 
 
 
 ### How It Works
