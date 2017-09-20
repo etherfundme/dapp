@@ -10,46 +10,46 @@ contract EtherFundMeCrowdfunding {
 	/// The crowdfunding project description
 	string public description;
 
-    /// The crowdfunding team contact
+  	/// The crowdfunding team contact
 	string public teamContact;
 
 	/// The start time of crowdfunding
-    uint public startsAt;
+   	uint public startsAt;
 
 	/// The end time of crowdfunding
-    uint public endsAt;
+   	uint public endsAt;
 
 	/// Crowdfunding team wallet
-    address public team;
+    	address public team;
 
-    /// etherfund.me fee wallet
-    address public feeReceiver;
+	/// etherfund.me fee wallet
+	address public feeReceiver;
 
 	/// etherfund.me deploy agent
 	address public deployAgent;
 
 	/// if the funding goal is not reached, investors may withdraw their funds
-    uint public fundingGoal;
+	uint public fundingGoal;
 
-    ///  How many distinct addresses have invested
-    uint public investorCount = 0;
+	///  How many distinct addresses have invested
+	uint public investorCount = 0;
 
 	///  Has this crowdfunding been finalized
-    bool public finalized;
+	bool public finalized;
  
-    ///  Has this crowdfunding been paused
+	///  Has this crowdfunding been paused
 	bool public halted;
 
-    ///  How much ETH each address has invested to this crowdfunding
-    mapping (address => uint256) public investedAmountOf;
+	///  How much ETH each address has invested to this crowdfunding
+	mapping (address => uint256) public investedAmountOf;
 
 	/// etherfund.me final fee in %
-    uint public constant ETHERFUNDME_FEE = 2;
+	uint public constant ETHERFUNDME_FEE = 2;
 
 	/// etherfund.me each transaction fee in %
-    uint public constant ETHERFUNDME_ONLINE_FEE = 1;
+	uint public constant ETHERFUNDME_ONLINE_FEE = 1;
 
-    /// if a project reach 60% of their funding goal it becomes successful
+    	/// if a project reach 60% of their funding goal it becomes successful
 	uint public constant GOAL_REACHED_CRITERION = 60;
 
 	/// State machine
@@ -59,18 +59,18 @@ contract EtherFundMeCrowdfunding {
 	/// Failure: Minimum funding goal not reached before ending time
 	/// Finalized: The finalized has been called and succesfully executed
 	/// Refunding: Refunds are loaded on the contract for reclaim
-    enum State { Unknown, Preparing, Funding, Success, Failure, Finalized, Refunding }
+	enum State { Unknown, Preparing, Funding, Success, Failure, Finalized, Refunding }
 
-    /// A new investment was made
-    event Invested(address investor, uint weiAmount);
+	/// A new investment was made
+	event Invested(address investor, uint weiAmount);
 
-    /// Withdraw was processed for a contributor
-    event Withdraw(address receiver, uint weiAmount);
+	/// Withdraw was processed for a contributor
+	event Withdraw(address receiver, uint weiAmount);
 
-    /// Returning funds for a contributor
-    event Refund(address receiver, uint weiAmount);
+	/// Returning funds for a contributor
+	event Refund(address receiver, uint weiAmount);
 
-    /// Modified allowing execution only if the crowdfunding is currently running
+	/// Modified allowing execution only if the crowdfunding is currently running
 	 modifier inState(State state) {
 		require(getState() == state);
 		_;
@@ -161,7 +161,7 @@ contract EtherFundMeCrowdfunding {
 			investorCount++;
 		}
 
-	    // calculate online fee
+    		// calculate online fee
 		uint onlineFeeAmount = (weiAmount * ETHERFUNDME_ONLINE_FEE) / 100;
 		Withdraw(feeReceiver, onlineFeeAmount);
 		// send online fee
@@ -194,9 +194,9 @@ contract EtherFundMeCrowdfunding {
 	 /// @dev Investors can claim refund.
 	 function refund() public inState(State.Refunding) {
 		uint weiValue = investedAmountOf[msg.sender];
-	    if (weiValue == 0) revert();
-	    investedAmountOf[msg.sender] = 0;
-	    Refund(msg.sender, weiValue);
+		if (weiValue == 0) revert();
+		investedAmountOf[msg.sender] = 0;
+		Refund(msg.sender, weiValue);
 		msg.sender.transfer(weiValue);
 	 }
 
