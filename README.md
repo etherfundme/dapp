@@ -14,8 +14,7 @@ EtherFundMe is a service for running crowdfunding campaigns on the Ethereum bloc
 SmartContract                             | Description
 ------------                              | -------------
 [EtherFundMeCrowdfunding](https://github.com/etherfundme/dapp/blob/master/contracts/EtherFundMeCrowdfunding.sol) | Basic crowdfunding contract 
-------------                              | -------------
-[EtherFundMeIssueTokensCrowdfunding](https://github.com/etherfundme/dapp/blob/master/contracts/EtherFundMeIssueTokensCrowdfunding .sol) | ERC20 token issue crowdfunding contract 
+[EtherFundMeIssueTokensCrowdfunding](https://github.com/etherfundme/dapp/blob/master/contracts/EtherFundMeIssueTokensCrowdfunding.sol) | ERC20 token issue crowdfunding contract 
 
 ### Bug Bounty
 
